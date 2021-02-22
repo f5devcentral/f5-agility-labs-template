@@ -6,8 +6,10 @@ Minimun Requirements
 
 No matter what you're daily driver is you'll need `Docker` and `Git`.
 
-.. note:: We recommend some sort of Linux shell. This can be done with Windows
-   but you'll need to overcome several hurdles.
+.. note:: We recommend some sort of Linux distro. All of this can be done with
+   Windows but you'll need to overcome several hurdles.
+
+.. attention:: The examples below assume Linux as the build machine.
 
 - For Linux use apt (or whatever package tool) to download and install:
 
@@ -31,7 +33,6 @@ No matter what you're daily driver is you'll need `Docker` and `Git`.
 - For Windows download the following and install:
 
   - `Git for Windows <https://git-scm.com/download/win>`_
-
   - `Docker Desktop for Windows <https://hub.docker.com/editions/community/docker-ce-desktop-windows/>`_
 
 Configure Git
@@ -51,6 +52,25 @@ terminal of choice run the following git commands:
 It's recommended to setup ssh auth with you're github account. For details on
 how to configure this see the following,
 `Connecting to GitHub with SSH <https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh>`_
+
+#. From linux this can easily be accomlished with the following:
+
+   .. code-block:: bash
+
+      ssh-keygen
+
+#. If you used the default `ssh-keygen` variables, simply copy the contents of
+   "id_rsa.pub". You can view the file with the following:
+
+   .. code-block:: bash
+
+      cat ~/.ssh/id_rsa.pub
+
+#. On github go to your account settings, click "SSH and GPG keys", and click
+   "New SSH key".
+
+   - Give the new key a "Title"
+   - Copy the contents of id_rsa.pub in the "Key" field
 
 Clone Your Repo
 ---------------
@@ -124,6 +144,8 @@ View your doc locally with Python
 ---------------------------------
 
 For your convenience a script to invoke a simple python web server is provided.
+
+.. attention:: Assuming Python3 is installed.
 
 #. From the repo directory run the `server` script in the "scripts" directory.
    This will start the http server on the local IP and port 8000
