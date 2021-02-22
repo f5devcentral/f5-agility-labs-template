@@ -1,5 +1,5 @@
-Lab 2 - Log and Change Headers (EXAMPLE)
-########################################
+Lab 1.2 - RST Editing (Tips & Tricks)
+=====================================
 
 Your iRule should:
 

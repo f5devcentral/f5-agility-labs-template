@@ -1,41 +1,11 @@
-Class Title
-===========
+Class 1: Getting Started
+========================
 
-This class covers the following topics:
+This class has one module and two labs. We're simply doing this to show the
+standard structure of a class/module/lab. 
 
-- Topic 1
-- Topic 2
-- Topic 3
-- Topic 4
-- Topic 5
-
-Expected time to complete: **1.25 hours**
-
-.. note::
-
-   All work for this lab will be performed exclusively from the Windows
-   jumphost. No installation or interaction with your local system is
-   required.
-
-
-Lab Components
---------------
-
-The following table lists the Credentials for all components:
-
-.. list-table::
-    :widths: 20 40 40
-    :header-rows: 1
-
-    * - **Component**
-      - **VLAN/IP Address(es)**
-      - **Credentials**
-    * - BigIP
-      - **Management:** bigip1
-      - ``admin``/``admin.F5demo.com``
-    * - Jumphost
-      - **Jumphost:** TBD
-      - ``external_user``/``P@ssw0rd!``
+.. note:: It could be simplier to throw all the content in one file but that
+   would miss the point of showing how curently use RST.
 
 .. toctree::
    :maxdepth: 1

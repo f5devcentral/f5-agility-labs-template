@@ -1,88 +1,112 @@
-Lab 1 - Create an iRule that Parses the URI to Route Traffic (EXAMPLE)
-######################################################################
+Lab 1.1 - Setup
+===============
 
+Minimun Requirements
+--------------------
 
-Creating your first HTTP iRule that routes traffic based upon the value of the Host name.
------------------------------------------------------------------------------------------
+No matter what you're daily driver is you'll need `Docker` and `Git`.
 
-The goal of this lab is to route incoming HTTP requests to a specfic pool based on the incoming http host name.
+.. note:: We recommend some sort of Linux shell. This can be done with Windows
+   but you'll need to overcome several hurdles.
 
-Please create an iRule that will route traffic based on the following table:
+- For Linux use apt (or whatever package tool) to download and install:
 
-.. list-table::
-    :widths: 40 40
-    :header-rows: 1
+  .. code-block:: bash
 
-    * - **Host Name**
-      - **Pool Name**
-    * - **dvwa.f5lab.com**
-      - **dvwa_pool_http**
-    * - **peruggia.f5lab.com**
-      - **peruggia_http_pool**
-    * - **wackopicko.f5lab.com**
-      - **wackopicko_http_pool**
+     sudo apt update
+     sudo apt install git
+     sudo apt install docker-ce
 
-.. important::
-   - Estimated completion time: 10 minutes
+- For Windows download the following and install:
 
-#. Open Chrome Browser
-#. Enter https://bigip1 into the address bar and hit Enter
+  - `Git for Windows <https://git-scm.com/download/win>`_
 
-   .. image:: ../images/bigip_login.png
-      :width: 800
+  - `Docker Desktop for Windows <https://hub.docker.com/editions/community/docker-ce-desktop-windows/>`_
 
-#. Login with **username**: **admin** 
-              **password**: **admin.F5demo.com**
-#. Click Local Traffic -> iRules  -> iRules List
-#. Click **Create** button
+Configure Git
+-------------
 
-   .. image:: ../images/irule_create.png
-      :width: 800
+Now that Git's installed we need to configure it for basic use. From your
+terminal of choice run the following git commands:
 
-#. Enter Name of **URI_Routing_iRule**
-#. Enter your code
-#. Click **Finished**
-#. Click Local Traffic -> Virtual Servers -> Virtual Server List
-#. Click on **http_irules_vip**
+.. code-block:: bash
 
-   .. image:: ../images/select_vs.png
-      :width: 800
+   git config --global user.name "vtog"
+   git config --global user.email "v.tognaci@f5.com"
+   git config --global core.editor vim
 
-#. Click on the **Resources tab**
-#. Click **Manage** button for the iRules section
+.. attention:: Be sure to use your user name, email, and editor of choice.
 
-   .. image:: ../images/resources.png
-      :width: 800
+You'll also want to setup ssh auth with you're github account. For details on
+how to configure this see the following,
+`Connecting to GitHub with SSH <https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh>`_
 
-#. Click on **URI_Routing_iRule** from the Available box and click the << button, thus moving it to the Enabled box.
+Clone Your Repo
+---------------
 
-   .. image:: ../images/lab1-irules-add.png
-      :width: 800
+Now that Git's installed and configured we need to clone the repo from GitHub
 
-#. Click the **Finished** button
-#. Open a new tab in Chrome
-#. Enter http://dvwa.f5lab.com/ and ensure you get there
-#. Now enter http://peruggia.f5lab.com/ and ensure you get to the app
-#. Finally, enter http://wackopicko.f5lab.com/  and ensure you can get to that app
+#. Open a terminal
+#. Clone your repo
 
-   .. image:: ../images/test_sites.png
-      :width: 800
+   .. code-block:: bash
 
-#. If you see this image below - it means your iRule did not work.
+      git clone git@github.com:f5devcentral/f5-agility-labs-template.git
 
-   .. image:: ../images/it_works.png
-      :width: 800
+#. When using the git clone as shown above it will clone the repo's default
+   branch. If a specific branch is required you have two options:
 
+   - use the "-b" switch when creating the clone
 
-.. hint::
-   `If you need a basic hint here is some example code: <../../class1/module1/irules/lab1irule_0.html>`__
+     .. code-block:: bash
 
-   Here is a link to DevCentral: https://clouddocs.f5.com/api/irules/HTTP__host.html
+        git clone -b develop git@github.com:f5devcentral/f5-agility-labs-template.git
 
-   If you are really stuck, here is what we are looking for:
+   - fetch the branch and checkout after cloning
 
-   #. `When HTTP_Request comes in <../../class1/module1/irules/lab1irule_1.html>`__
-   #. `Evaluate the HTTP_host name  <../../class1/module1/irules/lab1irule_2.html>`__
-   #. `If it matches send it to the correct pool. <../../class1/module1/irules/lab1irule_3.html>`__
-   #. `Loop through all the host names you want to match on and continue to direct to the correct pools. <../../class1/module1/irules/lab1irule_4.html>`__
-   #. `Now you should have enough to understand and the majority of code needed to create the iRule.  If not here is the complete iRule. <../../class1/module1/irules/lab1irule_99.html>`__
+     .. code-block:: bash
+
+         git fetch
+         git checkout develop
+
+Build The Doc
+-------------
+
+The repo should have several scripts to build the doc. The most important of
+which is `containthedocs-build.sh`
+
+#. From the currenlty open terminal move into the cloned repo directory
+
+   .. code-block:: bash
+
+      cd f5-agility-labs-template
+
+#. Build your html from rst
+
+   .. code-block:: bash
+
+      ./containthedocs-build.sh
+
+#. You now should have a new directory with your lab html files
+
+   .. code-block:: bash
+
+      ls -la docs/_build
+
+   You should see the following output
+
+   .. code-block:: bash
+
+      ❯ ls -la docs/_build
+      total 16
+      drwxr-xr-x 4 root  root  4096 Feb 22 13:14 .
+      drwxr-xr-x 6 vince vince 4096 Feb 22 13:14 ..
+      drwxr-xr-x 3 root  root  4096 Feb 22 13:14 doctrees
+      drwxr-xr-x 6 root  root  4096 Feb 22 13:14 html
+
+View your doc
+-------------
+
+Recap
+-----
+You now have a working repo with 

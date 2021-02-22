@@ -63,7 +63,3 @@ The repo includes build scripts for common operations:
 - ``containthedocs-cleanbuild.sh``: Clean the build directory and build HTML
   docs using ``make -C docs clean html``
 - ``containthedocs-convert.sh``: Convert a Word ``.docx`` file to rST
-- ``containthedocs-pdf.sh``: Build PDF docs using ``make -C docs latexpdf`` to
-  ``docs/_build/latex``
-
-
