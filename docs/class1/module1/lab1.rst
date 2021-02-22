@@ -11,11 +11,22 @@ No matter what you're daily driver is you'll need `Docker` and `Git`.
 
 - For Linux use apt (or whatever package tool) to download and install:
 
+  Git
+
   .. code-block:: bash
 
      sudo apt update
      sudo apt install git
-     sudo apt install docker-ce
+
+  Docker
+
+  .. code-block:: bash
+
+     sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+     curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+     sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+     sudo apt update
+     sudo apt install docker-ce docker-ce-cli containerd.io
 
 - For Windows download the following and install:
 
@@ -37,7 +48,7 @@ terminal of choice run the following git commands:
 
 .. attention:: Be sure to use your user name, email, and editor of choice.
 
-You'll also want to setup ssh auth with you're github account. For details on
+It's recommended to setup ssh auth with you're github account. For details on
 how to configure this see the following,
 `Connecting to GitHub with SSH <https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh>`_
 
@@ -45,6 +56,10 @@ Clone Your Repo
 ---------------
 
 Now that Git's installed and configured we need to clone the repo from GitHub
+
+.. important:: We're using the "template" repo in all our examples. Be sure to 
+   use the proper repo for the class you're working on. If you don't know which
+   one that is reach out to the `*AgilityLabsRTD` doc team.
 
 #. Open a terminal
 #. Clone your repo
@@ -54,15 +69,16 @@ Now that Git's installed and configured we need to clone the repo from GitHub
       git clone git@github.com:f5devcentral/f5-agility-labs-template.git
 
 #. When using the git clone as shown above it will clone the repo's default
-   branch. If a specific branch is required you have two options:
+   branch. If a specific branch is required you have two options depending on
+   where you are in the process.
 
-   - use the "-b" switch when creating the clone
+   - Before cloning: use the "-b" switch and specify the branch of choice
 
      .. code-block:: bash
 
         git clone -b develop git@github.com:f5devcentral/f5-agility-labs-template.git
 
-   - fetch the branch and checkout after cloning
+   - After cloning: use `fetch` and `checkout` the branch of choice
 
      .. code-block:: bash
 
@@ -104,9 +120,56 @@ which is `containthedocs-build.sh`
       drwxr-xr-x 3 root  root  4096 Feb 22 13:14 doctrees
       drwxr-xr-x 6 root  root  4096 Feb 22 13:14 html
 
-View your doc
--------------
+View your doc locally with Python
+---------------------------------
+
+For your convenience a script to invoke a simple python web server is provided.
+
+#. From the repo directory run the `server` script in the "scripts" directory.
+   This will start the http server on the local IP and port 8000
+
+   .. code-block:: bash
+
+      ./scripts/server
+
+#. With your local browser type in the following URL
+
+   .. code-block:: bash
+
+      http://<IP_ADDR>:8000/html/
+
+#. When finished hit CTRL-C
+
+View your doc locally with Nginx
+--------------------------------
+
+#. Install nginx
+
+   .. code-block:: bash
+
+      sudo apt install nginx
+
+#. Create a softlink to the rst repo documents.
+
+   .. code-block:: bash
+
+      cd /var/www/html
+      sudo ln -s ~/f5-agility-labs-template/docs/_build/html/ template
+
+   .. note:: In my example the cloned repo is in the home directory.
+
+#. With your local browser type in the following URL
+
+   .. code-block:: bash
+
+      http://<IP_ADDR>/template/
 
 Recap
 -----
-You now have a working repo with 
+You now have the following:
+
+- A working build environment
+- A cloned repo
+- A place to view changes
+
+Next we'll explore basic RST examples.
