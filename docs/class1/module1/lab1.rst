@@ -77,12 +77,14 @@ Clone Your Repo
 
 Now that Git's installed and configured we need to clone the repo from GitHub
 
+.. attention:: We recommend cloning opposed to forking.
+
 .. important:: We're using the "template" repo in all our examples. Be sure to 
    use the proper repo for the class you're working on. If you don't know which
    one that is reach out to the `*AgilityLabsRTD` doc team.
 
 #. Open a terminal
-#. Clone your repo
+#. Clone the repo you plan to contribute to.
 
    .. code-block:: bash
 
@@ -104,6 +106,43 @@ Now that Git's installed and configured we need to clone the repo from GitHub
 
          git fetch
          git checkout develop
+
+Fork Your Repo (NOT Recommended)
+--------------------------------
+
+.. important:: We recommend the cloning process outlined in the previous
+   section. This section is to document how to fork/clone. But more importantly
+   keep your fork/clone in sync.
+
+#. From GitHub Fork the Agility repo you plan to contribute to.
+#. Clone the repo to your build PC.
+
+   .. code-block:: bash
+
+      git clone git@github.com:f5devcentral/f5-agility-labs-template.git
+
+#. See previous section on "branch" selection/changing.
+
+.. important:: You need to know how to keep your fork in sync with the upstream
+   Agility project.
+
+#. Stay in sync with the upstream repo.
+
+   .. code-block:: bash
+
+      git remote add upstream <agility repo clone link>
+
+#. Rebase your branch
+
+   .. code-block:: bash
+
+      git pull --rebase upstream <branch>
+
+#. Update your Local Fork
+
+   .. code-block:: bash
+
+      git push --force
 
 Build The Doc
 -------------
