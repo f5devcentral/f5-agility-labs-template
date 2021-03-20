@@ -79,7 +79,7 @@ Now that Git's installed and configured we need to clone the repo from GitHub
 
 .. attention:: We recommend cloning opposed to forking.
 
-.. important:: We're using the "template" repo in all our examples. Be sure to 
+.. important:: We're using the "template" repo in all our examples. Be sure to
    use the proper repo for the class you're working on. If you don't know which
    one that is reach out to the `*AgilityLabsRTD` doc team.
 
