@@ -8,9 +8,9 @@ Welcome to the |classbold| for F5 Agility |year|
 
 |repoinfo|
 
-.. note:: 
+.. note::
    Each Agility lab is typically broken down by "Class" --> "Module" --> "Lab".
-   Each section uses "toctree" to create the index and reference the content. 
+   Each section uses "toctree" to create the index and reference the content.
    Using this template should give the contributer several getting-started
    RST examples.
 
