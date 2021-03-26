@@ -17,7 +17,7 @@ repos:
       - id: black
         description: python code formatter
   - repo: https://github.com/pycqa/flake8
-    rev: 3.8.4
+    rev: 3.9.0
     hooks:
       - id: flake8
         description: enforcing style consistency across Python projects
