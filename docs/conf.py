@@ -18,9 +18,6 @@ classname = "F5 Agility Template"
 # OPTIONAL: The URL to the GitHub Repository for this class
 github_repo = "https://github.com/f5devcentral/f5-agility-labs-template"
 
-# OPTIONAL: Google Analytics
-# googleanalytics_id = 'UA-85156643-4'
-
 #
 # END CONFIG
 # ----------
@@ -90,13 +87,9 @@ extensions = [
     "sphinx.ext.graphviz",
     "sphinxcontrib.nwdiag",
     "sphinx_copybutton",
-    "sphinxcontrib.blockdiag",
-    "sphinx.ext.autosectionlabel",
+    "sphinxcontrib.blockdiag"
+    # "sphinx.ext.autosectionlabel"
 ]
-
-# if "googleanalytics_id" in locals() and len(googleanalytics_id) > 0:
-#     extensions += ["sphinxcontrib.googleanalytics"]
-#     googleanalytics_enabled = True
 
 graphviz_output_format = "svg"
 graphviz_font = "DejaVu Sans:style=Book"
@@ -137,7 +130,7 @@ templates_path = ["_templates"]
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-source_suffix = [".rst", ".md"]
+source_suffix = [".rst"]
 
 # The master toctree document.
 master_doc = "index"
@@ -182,14 +175,12 @@ todo_include_todos = True
 
 html_theme = "f5_sphinx_theme"
 html_theme_path = f5_sphinx_theme.get_html_theme_path()
-html_sidebars = {
-    "**": ["searchbox.html", "localtoc.html", "globaltoc.html", "relations.html"]
-}
+html_sidebars = {"**": ["searchbox.html", "localtoc.html", "globaltoc.html"]}
 html_theme_options = {
     "site_name": "Community Training Classes & Labs",
     "next_prev_link": True,
 }
-html_last_updated_fmt = "%Y-%m-%d %I:%M:%S"
+html_last_updated_fmt = "%Y-%m-%d %H:%M:%S"
 
 extlinks = {"issues": (("%s/issues/%%s" % github_repo), "issue ")}
 
@@ -207,7 +198,7 @@ html_static_path = ["_static"]
 
 # -- Options for HTMLHelp output ------------------------------------------
 
-cleanname = re.sub("\\W", "", classname)
+cleanname = re.sub("\\W+", "", classname)
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = cleanname + "doc"
