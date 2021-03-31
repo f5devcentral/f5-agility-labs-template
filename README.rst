@@ -12,8 +12,8 @@ Setup
 
 #. Download or ``git clone`` the f5-agility-lab-template
 #. Download and install Docker CE (https://docs.docker.com/engine/installation/)
-#. Build the sample docs ``./containthedocs-build.sh``. The first time you build
-   a container (~1G in size) will be downloaded from Docker Hub.
+#. Build the sample docs ``./containthedocs-build.sh``. The first time you
+   build a container (~1G in size) will be downloaded from Docker Hub.
 #. Open the ``docs/_build/html/index.html`` file on you system in a web browser
 
 Configuration & Use
@@ -21,7 +21,8 @@ Configuration & Use
 
 To use this template:
 
-#. Copy contents of this repo to a new directory ``cp -Rf . /path/to/your/docs``
+#. Copy contents of this repo to a new directory
+   ``cp -Rf . /path/to/your/docs``
 #. ``cd /path/to/your/docs``
 #. Edit ``docs/conf.py``
 #. Modify the following lines:

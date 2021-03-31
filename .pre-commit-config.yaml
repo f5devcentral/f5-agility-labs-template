@@ -27,5 +27,5 @@ repos:
     hooks:
       - id: doc8
         description: linting for rst files
-        entry: doc8 --ignore-path docs/_build/ -e rst --ignore D001 docs/
+        entry: doc8 --ignore-path docs/_build/ -e rst docs/
         require_serial: true
