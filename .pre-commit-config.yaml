@@ -2,9 +2,10 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.2.0
+    rev: v3.4.0
     hooks:
       - id: check-yaml
+        args: [--allow-multiple-documents]
       - id: check-added-large-files
       - id: detect-private-key
       - id: end-of-file-fixer
@@ -16,7 +17,7 @@ repos:
       - id: black
         description: python code formatter
   - repo: https://github.com/pycqa/flake8
-    rev: 3.8.4
+    rev: 3.9.0
     hooks:
       - id: flake8
         description: enforcing style consistency across Python projects
@@ -26,5 +27,5 @@ repos:
     hooks:
       - id: doc8
         description: linting for rst files
-        entry: doc8 --ignore-path docs/_build/ -e rst --ignore D001 docs/
+        entry: doc8 --ignore-path docs/_build/ -e rst docs/
         require_serial: true

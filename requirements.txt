@@ -1,7 +1,8 @@
 f5_sphinx_theme
+pre-commit
 recommonmark
-Sphinx
-sphinxcontrib-addmetahtml
+sphinx
+sphinx-copybutton
 sphinxcontrib-blockdiag
-sphinxcontrib-googleanalytics
 sphinxcontrib-nwdiag
+sphinxcontrib-serializinghtml
