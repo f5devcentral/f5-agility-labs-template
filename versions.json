@@ -1,0 +1,10 @@
+{
+  "versionMetaTimestamp": 1523306837369,
+  "latestVersion": {
+    "name": "Master",
+    "url": "/"
+  },
+  "otherVersions": [
+    { "name": "Develop", "url": "/develop"}
+  ]
+}
