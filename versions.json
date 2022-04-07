@@ -2,9 +2,9 @@
   "versionMetaTimestamp": 1523306837369,
   "latestVersion": {
     "name": "Master",
-    "url": "/"
+    "url": "/training/community/template/html/"
   },
   "otherVersions": [
-    { "name": "Develop", "url": "/develop"}
+    { "name": "Develop", "url": "/training/community/template/html/develop/"}
   ]
 }

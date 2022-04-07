@@ -184,7 +184,7 @@ html_theme_options = {
 }
 
 html_context = {
-    "version_meta_path": "/training/community/template/html/versions.json",
+    "version_meta_path": "/training/community/template/versions.json",
     "project_safe": re.sub("[^A-Za-z0-9]+", "", project),
 }
 html_last_updated_fmt = "%Y-%m-%d %H:%M:%S"
