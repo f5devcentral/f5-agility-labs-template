@@ -6,7 +6,6 @@
   },
   "otherVersions": [
     { "name": "Develop", "url": "/training/community/template/html/develop/"},
-    { "name": "2019", "url": "/training/community/template/html/2019/"},
     { "name": "2020", "url": "/training/community/template/html/2020/"},
     { "name": "2021", "url": "/training/community/template/html/2021/"}
   ]
