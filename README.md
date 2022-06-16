@@ -1,6 +1,9 @@
 F5 Agility Lab Template
 =======================
 
+[![Issues](https://img.shields.io/github/issues/f5devcentral/f5-agility-labs-template.svg)](https://github.com/f5devcentral/f5-agility-labs-template/issues)
+[![Build the Docs](https://github.com/f5devcentral/f5-agility-labs-template/actions/workflows/build-the-docs.yml/badge.svg)](https://github.com/f5devcentral/f5-agility-labs-template/actions/workflows/build-the-docs.yml)
+
 Introduction
 ------------
 
@@ -10,40 +13,38 @@ documentation for F5's Agility Labs.
 Setup
 -----
 
-#. Download or ``git clone`` the f5-agility-lab-template
-#. Download and install Docker CE (https://docs.docker.com/engine/installation/)
-#. Build the sample docs ``./containthedocs-build.sh``. The first time you
+1. Download or ``git clone`` the f5-agility-lab-template
+2. Download and install Docker CE (https://docs.docker.com/engine/installation/)
+3. Build the sample docs ``./containthedocs-build.sh``. The first time you
    build a container (~1G in size) will be downloaded from Docker Hub.
-#. Open the ``docs/_build/html/index.html`` file on you system in a web browser
+4. Open the ``docs/_build/html/index.html`` file on you system in a web browser
 
 Configuration & Use
 -------------------
 
 To use this template:
 
-#. Copy contents of this repo to a new directory
+1. Copy contents of this repo to a new directory
    ``cp -Rf . /path/to/your/docs``
-#. ``cd /path/to/your/docs``
-#. Edit ``docs/conf.py``
-#. Modify the following lines:
-
+2. ``cd /path/to/your/docs``
+3. Edit ``docs/conf.py``
+4. Modify the following lines:
    - ``classname = "Your Class Name"``
    - ``github_repo = "https://github.com/f5devcentral/your-class-repo"``
-
-#. Build docs ``./containthedocs-build.sh`` (*see Build Scripts below*)
-#. Open the ``docs/_build/html/index.html`` file on you system in a web browser
-#. Edit the ``*.rst`` files as needed for your class
-#. Rebuild docs as needed using ``./containthedocs-build.sh``
+5. Build docs ``./containthedocs-build.sh`` (*see Build Scripts below*)
+6. Open the ``docs/_build/html/index.html`` file on you system in a web browser
+7. Edit the ``*.rst`` files as needed for your class
+8. Rebuild docs as needed using ``./containthedocs-build.sh``
 
 Converting from Microsoft Word
 ------------------------------
 
 To convert a ``.docx`` file from Microsoft Work to reStructuredText:
 
-#. Copy your ``.docx`` file into the f5-agility-lab-template directory
-#. Run ``./containthedocs-convert.sh <filename.docx>``
-#. Your converted file will be named ``filename.rst``
-#. Images in your document will be extracted and placed in the ``media``
+1. Copy your ``.docx`` file into the f5-agility-lab-template directory
+2. Run ``./containthedocs-convert.sh <filename.docx>``
+3. Your converted file will be named ``filename.rst``
+4. Images in your document will be extracted and placed in the ``media``
    directory
 
 .. WARNING:: While the document has been converted to rST format you will still
