@@ -130,14 +130,18 @@ templates_path = ["_templates"]
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-source_suffix = [".rst"]
+source_suffix = [".rst", ".md"]
+
+source_parsers = {
+    ".md": "recommonmark.parser.CommonMarkParser",
+}
 
 # The master toctree document.
 master_doc = "index"
 
 # General information about the project.
 project = classname
-copyright = "2019, F5 Networks, Inc."
+copyright = "2022, F5 Networks, Inc."
 author = "F5 Networks, Inc."
 
 # The version info for the project you're documenting, acts as replacement for
@@ -182,11 +186,12 @@ html_theme_options = {
     "next_prev_link": True,
     "version_selector": True,
 }
-
 html_context = {
     "version_meta_path": "/training/community/template/versions.json",
     "project_safe": re.sub("[^A-Za-z0-9]+", "", project),
+    "github_url": github_repo,
 }
+html_codeblock_linenos_style = "table"
 html_last_updated_fmt = "%Y-%m-%d %H:%M:%S"
 
 extlinks = {"issues": (("%s/issues/%%s" % github_repo), "issue ")}
