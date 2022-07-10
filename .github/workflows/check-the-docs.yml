@@ -20,7 +20,7 @@ jobs:
     - name: Install write-good
       run: |
         npm install --no-fund --location=global write-good
-    - name: Run write-good
+    - name: Run write-good to check grammer
       run: |
         write-good `find ./docs -name '*.rst'` --so
 
@@ -42,3 +42,9 @@ jobs:
     - name: Run spell checker
       run: |
         sphinx-build -b spelling -d docs/_build docs/ docs/_build/spelling
+        if [[ -s "docs/_build/spelling/index.spelling" ]]; then cat "docs/_build/spelling/index.spelling"; fi
+    - name: Spelling errors fail the build
+      # fail the build in case of any misspelled words
+      run: |
+        if [[ -s "docs/_build/spelling/index.spelling" ]]; then cat "docs/_build/spelling/index.spelling"; fi
+        if [[ -s "docs/_build/spelling/index.spelling" ]]; then false; fi
