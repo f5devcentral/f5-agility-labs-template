@@ -39,6 +39,7 @@ jobs:
       run: |
         sudo apt update && sudo apt install -y enchant
         pip install -r requirements.txt
+        pip install sphinxcontrib-spelling
     - name: Run spell checker
       run: |
         sphinx-build -b spelling -d docs/_build docs/ docs/_build/spelling
