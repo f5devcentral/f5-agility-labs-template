@@ -85,9 +85,9 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx.ext.extlinks",
     "sphinx.ext.graphviz",
-    "sphinxcontrib.nwdiag",
-    "sphinx_copybutton",
-    "sphinxcontrib.blockdiag"
+    "sphinx_copybutton"
+    # "sphinxcontrib.nwdiag",
+    # "sphinxcontrib.blockdiag",
     # "sphinx.ext.autosectionlabel"
 ]
 
@@ -117,7 +117,8 @@ if found:
     spelling_lang = "en_US"
     spelling_word_list_filename = "../wordlist"
     spelling_show_suggestions = True
-    spelling_ignore_pypi_package_names = False
+    spelling_ignore_pypi_package_names = True
+    spelling_ignore_contributor_names = True
     spelling_ignore_wiki_words = True
     spelling_ignore_acronyms = True
     spelling_ignore_python_builtins = True
@@ -158,7 +159,7 @@ release = "latest"
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = "en"
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
