@@ -25,7 +25,7 @@ RUN pip install sphinx sphinx-autobuild rstcheck[sphinx] f5_sphinx_theme recommo
 RUN pip install virtualenv boto3 sphinx-js tornado sphinx-copybutton commonmark sphinxcontrib-nwdiag
 RUN pip install sphinxcontrib-blockdiag sphinxcontrib-addmetahtml sphinxprettysearchresults sphinx-markdown-tables
 RUN pip install gitpython yattag cfgv identify nodeenv pre-commit awscli sphinxcontrib-serializinghtml
-RUN pip install snooty-lextudio esbonio restructuredtext_lint
+RUN pip install snooty-lextudio esbonio
 
 ## Code-server and required extensions
 RUN curl -fsSL https://code-server.dev/install.sh | sh
