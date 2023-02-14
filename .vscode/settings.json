@@ -3,5 +3,6 @@
     "esbonio.sphinx.buildDir" : "${workspaceFolder}/docs/_build/html",
     "esbonio.sphinx.srcDir"   : "${workspaceFolder}/docs",
     "restructuredtext.preview.name": "sphinx",
-    "restructuredtext.linter.rstcheck.executablePath": "/opt/homebrew/bin/rstcheck"
+    "restructuredtext.linter.rstcheck.executablePath": "/opt/homebrew/bin/rstcheck",
+    "restructuredtext.linter.rstcheck.extraArgs": [--ignore-substitutions]
 }
