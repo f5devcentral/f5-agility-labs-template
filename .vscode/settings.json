@@ -4,5 +4,5 @@
     "esbonio.sphinx.srcDir"   : "${workspaceFolder}/docs",
     "restructuredtext.preview.name": "sphinx",
     "restructuredtext.linter.rstcheck.executablePath": "/opt/homebrew/bin/rstcheck",
-    "restructuredtext.linter.rstcheck.extraArgs": [--ignore-substitutions]
+    "restructuredtext.linter.rstcheck.extraArgs": ["--ignore-substitutions", "|classbold|,|year|"]
 }
