@@ -3,7 +3,7 @@
 set -x
 
 COMMAND="make -C docs spelling"
-ARCH=`uname m`
+ARCH=`uname -m`
 
 . ./containthedocs-image-$ARCH
 
