@@ -23,7 +23,7 @@ RUN apt-get -y install software-properties-common python3-pip wget curl git pyth
 
 ## Required Sphinx packages
 RUN pip install sphinx sphinx-autobuild rstcheck[sphinx] f5_sphinx_theme recommonmark sphinx_copybutton \
-                sphinxjp.themes.sphinxjp sphinxjp.themes.basicstrap cloud_sptheme virtualenv boto3 sphinx-js \
+                sphinxjp.themes.sphinxjp sphinxjp.themes.basicstrap cloud_sptheme virtualenv boto3 \
                 tornado sphinx-copybutton commonmark sphinxcontrib-nwdiag sphinxcontrib-blockdiag \
                 sphinxcontrib-addmetahtml sphinxprettysearchresults sphinx-markdown-tables gitpython yattag \
                 cfgv identify nodeenv pre-commit awscli sphinxcontrib-serializinghtml snooty-lextudio esbonio
