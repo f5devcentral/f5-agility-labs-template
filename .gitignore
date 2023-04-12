@@ -8,3 +8,4 @@ terraform.tfstate*
 *.rpm
 *.swp
 .virtualenv
+.vscode
