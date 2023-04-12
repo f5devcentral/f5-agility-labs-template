@@ -14,3 +14,5 @@ Then install the following extentions:
 The ``settings.json`` file in this folder are base settings to VSCode that will allow functions such as preview and linting of RST files. There are also settings that support the Sphinx render engine. You can either use this file as is or merge the directives into your current settings.json file. 
 
 Witin your repo copy/clone you should place a ``.vscode`` folder and place the settings.json file in this folder. 
+
+If you are using the template repo you can simply rename this folder from ``vscode`` to ``.vscode``
