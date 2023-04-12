@@ -15,10 +15,12 @@ Setup
 -----
 
 1. Download or ``git clone`` the f5-agility-lab-template
-2. Download and install Docker CE (https://docs.docker.com/engine/installation/)
+2. Download and install ``vscode``
+3. Install the ``Live Server`` extension ( https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+2. Download and install Podman Desktop (https://podman-desktop.io/)
 3. Build the sample docs ``./containthedocs-build.sh``. The first time you
    build a container (~1G in size) will be downloaded from Docker Hub.
-4. Open the ``docs/_build/html/index.html`` file on you system in a web browser
+4. Open the ``docs/_build/html/`` right click on ``index.html`` and open with the Live Server extension.
 
 Configuration & Use
 -------------------
@@ -33,7 +35,7 @@ To use this template:
    - ``classname = "Your Class Name"``
    - ``github_repo = "https://github.com/f5devcentral/your-class-repo"``
 5. Build docs ``./containthedocs-build.sh`` (*see Build Scripts below*)
-6. Open the ``docs/_build/html/index.html`` file on you system in a web browser
+6. Open the ``docs/_build/html/index.html`` file on you system with the Live Server extension.
 7. Edit the ``*.rst`` files as needed for your class
 8. Rebuild docs as needed using ``./containthedocs-build.sh``
 
@@ -66,3 +68,4 @@ The repo includes build scripts for common operations:
 - ``containthedocs-cleanbuild.sh``: Clean the build directory and build HTML
   docs using ``make -C docs clean html``
 - ``containthedocs-convert.sh``: Convert a Word ``.docx`` file to rST
+- ``containthedocs-code-server.sh`` : Will launch a VSCode server in the docker image already configured, open the vscode server by pointing your browser to http://127.0.0.1:3000/
