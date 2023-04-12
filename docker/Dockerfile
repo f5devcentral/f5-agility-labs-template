@@ -34,6 +34,8 @@ RUN code-server --config /home/code-server/config.yaml --install-extension ms-py
 RUN code-server --config /home/code-server/config.yaml --install-extension lextudio.restructuredtext --force
 RUN code-server --config /home/code-server/config.yaml --install-extension ms-vscode.live-server --force
 RUN code-server --config /home/code-server/config.yaml --install-extension trond-snekvik.simple-rst --force
+RUN code-server --config /home/code-server/config.yaml --install-extension lextudio.restructuredtext-pack --force
+
 
 RUN openssl genrsa -des3 -passout pass:x -out server.pass.key 2048 && \
     openssl rsa -passin pass:x -in server.pass.key -out server.key && \
