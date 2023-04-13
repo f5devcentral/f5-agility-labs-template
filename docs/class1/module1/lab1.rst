@@ -33,7 +33,7 @@ No matter what you're daily driver is you'll need `Docker` and `Git`.
 - For Windows download the following and install:
 
   - `Git for Windows <https://git-scm.com/download/win>`_
-  - `Docker Desktop for Windows <https://hub.docker.com/editions/community/docker-ce-desktop-windows/>`_
+  - `Podman Desktop is a free alternative to Docker desktop <http://podman-desktop.io>`
 
 Configure Git
 -------------
