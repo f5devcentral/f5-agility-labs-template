@@ -131,12 +131,14 @@ templates_path = ["_templates"]
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
+# recommonmark has been deprecated, replaced with myst_parser
+# source_suffix defaults to ".rst and ".restructured" so 
+# source_suffix isn't needed and souce parsers isn't needed
+# source_suffix = [".rst", ".md"]
 #
-source_suffix = [".rst", ".md"]
-
-source_parsers = {
-    ".md": "recommonmark.parser.CommonMarkParser",
-}
+# source_parsers = {
+#     ".md": "recommonmark.parser.CommonMarkParser",
+# }
 
 # The master toctree document.
 master_doc = "index"
