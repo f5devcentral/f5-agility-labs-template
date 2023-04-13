@@ -126,6 +126,12 @@ if found:
     spelling_ignore_importable_modules = True
     spelling_filters = []
 
+
+# The autosectionlabel will emmit warnings about duplicate
+# labels. Supress these warnings by making labels unique to a doc
+
+autosectionlabel_prefix_document = True
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
