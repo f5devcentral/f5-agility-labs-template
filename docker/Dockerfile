@@ -24,9 +24,10 @@ RUN apt-get -y install software-properties-common python3-pip wget curl git pyth
 ## Required Sphinx packages
 RUN pip install sphinx sphinx-autobuild rstcheck[sphinx] f5_sphinx_theme recommonmark sphinx_copybutton \
                 sphinxjp.themes.sphinxjp sphinxjp.themes.basicstrap cloud_sptheme virtualenv boto3 \
-                tornado commonmark sphinxcontrib-nwdiag sphinxcontrib-blockdiag \
+                tornado commonmark sphinxcontrib-nwdiag sphinxcontrib-blockdiag myst-parser sphinx-lint \
                 sphinxcontrib-addmetahtml sphinxprettysearchresults sphinx-markdown-tables gitpython yattag \
-                cfgv identify nodeenv pre-commit awscli sphinxcontrib-serializinghtml snooty-lextudio esbonio
+                cfgv identify nodeenv pre-commit awscli sphinxcontrib-serializinghtml snooty-lextudio esbonio \
+                sphinx-terraform sphinx-simplepdf 
 
 ## Code-server and required extensions
 RUN curl -fsSL https://code-server.dev/install.sh | sh
@@ -34,7 +35,6 @@ RUN code-server --config /home/code-server/config.yaml --install-extension ms-py
 RUN code-server --config /home/code-server/config.yaml --install-extension lextudio.restructuredtext --force
 RUN code-server --config /home/code-server/config.yaml --install-extension ms-vscode.live-server --force
 RUN code-server --config /home/code-server/config.yaml --install-extension trond-snekvik.simple-rst --force
-RUN code-server --config /home/code-server/config.yaml --install-extension lextudio.restructuredtext-pack --force
 
 
 RUN openssl genrsa -des3 -passout pass:x -out server.pass.key 2048 && \
