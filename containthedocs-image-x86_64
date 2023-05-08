@@ -1,1 +1,1 @@
-: ${DOC_IMG:=wetspark/combo-ctd:x86_64}
+: ${DOC_IMG:=f5devcentral/containthedocs:latest}
