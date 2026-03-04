@@ -4,7 +4,7 @@ set -x
 
 COMMAND="make -C docs singlehtml"
 
-. ./containthedocs-image
+. ./containthedocs-image-$ARCH
 
 exec docker run --rm -it \
   -v "$PWD":"$PWD" --workdir "$PWD" \
